@@ -1,0 +1,30 @@
+{# empty Twig template #}
+ {%extends "EpsiPremierBundle::layout.html.twig" %}
+{% block title %} hello  {% endblock %}
+{% block contenu %}
+  <h3>Modification d'une catégorie</h3>
+  <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 contact-text">
+                    <h3>Ajout d'une catégorie</h3>
+                </div>
+                <div class="col-lg-8">
+                    <form name="form" id="form" method="post" class="contact-form">
+                        {{form_start(form)}}
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{ form_row(form.Libelle) }}
+                            </div>
+                            <div class="col-md-12">
+                                {{ form_row(form.Envoyer,{'attr': {'class':'site-btn'}}) }}
+                            </div>
+                                {{ message }}
+                        </div>
+                        {{ form_end(form)}}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{%endblock%}

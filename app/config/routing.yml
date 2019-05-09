@@ -1,0 +1,20 @@
+epsi_premier:
+    resource: "@EpsiPremierBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+themes:    
+    type: rest    
+    resource: Epsi\PremierBundle\Controller\ThemeController
+
+categorie:
+    type: rest
+    resource: Epsi\PremierBundle\Controller\CategorieController
+    
+
+nelmio-api-doc:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix: /

@@ -1,0 +1,24 @@
+{% extends "EpsiPremierBundle::layout.html.twig" %}
+{% block title %} {{ parent() }} - Admin {% endblock %}
+
+{% block contenu %} Page d'administration
+<br />Liste des thèmes
+{% if not listeTheme is empty %}
+{{ form_start(form)}}
+<table>
+ <tr><th>id</th><th>Theme</th></tr>
+ {% for key,value in listeTheme %}
+ <tr><td><a href="{{ path('Epsi_premier_suppTheme',
+{'id':value.id})}}">{{ value.Libelle }}</a>
+<input
+type="checkbox" name="cocher[]" value="{{ value.id }}"/></td></tr>
+ {% endfor %}
+</table>
+
+{{ form_end(form)}}
+{% else %}
+ Aucun contact à afficher
+
+{% endif %}
+
+{% endblock %}

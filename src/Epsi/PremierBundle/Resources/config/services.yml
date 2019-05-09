@@ -1,0 +1,4 @@
+services:
+#    epsi_premier.example:
+#        class: Epsi\PremierBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

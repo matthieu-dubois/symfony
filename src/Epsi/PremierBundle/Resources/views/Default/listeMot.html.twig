@@ -1,0 +1,26 @@
+{# empty Twig template #}
+{% extends "EpsiPremierBundle::layout.html.twig" %}
+{% block title %} {{ parent() }} - Admin {% endblock %}    
+{% block contenu %}  <br />Liste des Mot {% if not listeMot is empty %}
+<table>
+    <tr><th>id</th><th>Libelle</th></tr>   
+    {% for key,value in listeMot %}  
+        <tr><td>{{ value.id }}</td><td>{{ value.Libelle }}</td>
+            
+            <td>
+        <a href="{{ path('epsi_premier_modification_mot',{'id':value.id})}}">
+            Modifier</a>
+    </td>
+    
+    <td>
+        <a href="{{ path('epsi_premier_suppression_mot',{'id':value.id})}}">
+            Supprimer</a>
+    </td>
+     
+        </tr>  
+    {% endfor %} 
+</table>    
+ {% else %}   
+     Aucun catégorie à afficher   
+     {% endif %}  
+         {% endblock %}
