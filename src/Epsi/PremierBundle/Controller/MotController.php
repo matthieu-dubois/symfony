@@ -20,6 +20,7 @@ class MotController extends Controller {
         $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $mot);
         $formBuilder
                 ->add('Libelle', TextType::class)
+                ->add('Traduction', TextType::class)
                 ->add('categorie', EntityType::class,
                         array('class'=>'EpsiPremierBundle:Categorie','choice_label'=> 'libelle')
                      )
@@ -48,12 +49,10 @@ class MotController extends Controller {
         
         $repository = $this->getDoctrine()->getManager()->getRepository('EpsiPremierBundle:Mot'); $listeMot = $repository->findAll(); 
         
-        return $this->render('EpsiPremierBundle:Default:listeMot.html.twig',array('listeMot'=>$listeMot));
+        return $this->render('EpsiPremierBundle:Default:listeMot.html.twig',array('ListeMot'=>$listeMot));
         
        
     }
-    
-    
     
     public function modificationAction(Request $request, $id) {
     $repository = $this->getDoctrine()->getManager()->getRepository('EpsiPremierBundle:Mot');
@@ -62,6 +61,7 @@ class MotController extends Controller {
     $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $mot);
         $formBuilder
                 ->add('Libelle', TextType::class)
+                ->add('Traduction', TextType::class)
                 ->add('Envoyer', SubmitType::class)
         ;
         $msg = '';
@@ -94,6 +94,15 @@ class MotController extends Controller {
         return $response;
     
      }
+     public function AfficherCategorieAction(Request $request, $id){
+        $repository = $this->getDoctrine()->getManager()->getRepository('EpsiPremierBundle:Mot');
+        $mot = $repository-> AfficheCategorie($id);
+        $em = $this->getDoctrine()->getManager();
+        $em->flush();
+        return $this->render('EpsiPremierBundle:Default:listeMot.html.twig',array('ListeMot'=>$mot));
+    
+     }
+     
 }
 
 

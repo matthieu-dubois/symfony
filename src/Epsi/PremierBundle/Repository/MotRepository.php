@@ -10,4 +10,14 @@ namespace Epsi\PremierBundle\Repository;
  */
 class MotRepository extends \Doctrine\ORM\EntityRepository
 {
+  public function AfficheCategorie($id) : array {
+      $conn = $this->getEntityManager()->getConnection();
+      $sql ='SELECT mot .id , mot.libelle as Libelle , mot.traduction as Traduction , categorie.libelle'
+             . ' FROM mot'
+             . ' INNER JOIN categorie on mot.categorie_id = categorie.id' 
+             . ' WHERE mot.categorie_id = '.$id;
+      $stmt= $conn->prepare($sql);
+      $stmt->execute();
+      return $stmt->fetchAll();
+  }
 }

@@ -4,7 +4,7 @@
     <section class="section-page-top set-bg">
         <img class="set-bg" src="{{asset('bundles/epsifirst/images/page-top-bg.jpg')}}" alt="">
         <div class="container text-white">
-            <h3>Catégorie</h3>
+            <h3>Mot</h3>
         </div>
     </section>
     <section class="contact-section spad">
@@ -19,6 +19,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 {{ form_row(form.Libelle) }}
+                            </div>
+                            <div class="col-md-12">
+                                {{ form_row(form.Traduction) }}
                             </div>
                             <div class="col-md-12">
                                 {{ form_row(form.Ajouter,{'attr': {'class':'site-btn'}}) }}

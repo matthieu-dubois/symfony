@@ -16,10 +16,6 @@ epsi_premier_suppression_categorie:
     path:     /supressionCategorie/{id}
     defaults: { _controller: EpsiPremierBundle:Categorie:suppression}
 
-
-    
-
-
 epsi_premier_entreprise:
     path:     /entreprise
     defaults: { _controller: EpsiPremierBundle:Entreprise:entreprise }
@@ -46,6 +42,9 @@ epsi_premier_modification_mot:
 epsi_premier_suppression_mot:
     path:     /supressionMot/{id}
     defaults: { _controller: EpsiPremierBundle:Mot:suppression}
+epsi_premier_afficher_categorie:
+    path:     /afficherCategorie/{id}
+    defaults: { _controller: EpsiPremierBundle:Mot:AfficherCategorie}
 
 
 

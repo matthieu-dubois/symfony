@@ -28,6 +28,13 @@ class Mot
      */
     private $libelle;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="traduction", type="string", length=50)
+     */
+    private $traduction;
+    
     /** 
      * @ORM\ManyToMany(targetEntity="Epsi\PremierBundle\Entity\listeMot",cascade={"persist"})
     */ 
@@ -60,7 +67,6 @@ class Mot
 
         return $this;
     }
-
     /**
      * Get libelle
      *
@@ -70,6 +76,32 @@ class Mot
     {
         return $this->libelle;
     }
+
+    /**
+     * Set traduction
+     *
+     * @param string $traduction
+     *
+     * @return Mot
+     */
+    public function setTraduction($traduction)
+    {
+        $this->traduction = $traduction;
+
+        return $this;
+    }
+    /**
+     * Get traduction
+     *
+     * @return string
+     */
+    public function getTraduction()
+    {
+        return $this->traduction;
+    }
+    
+    
+
     /**
      * Constructor
      */

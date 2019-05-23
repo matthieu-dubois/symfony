@@ -1,13 +1,18 @@
 {# empty Twig template #}
 {% extends "EpsiPremierBundle::layout.html.twig" %}
-{% block title %} {{ parent() }} - Admin {% endblock %}    
-{% block contenu %}  <br />Liste des Mot {% if not listeMot is empty %}
+{% block title %} {{ parent() }} -admin {% endblock %}    
+{% block contenu %}   <br />Liste des Categories {% if not ListeMot is empty %}
+         
 <table>
-    <tr><th>id</th><th>Libelle</th></tr>   
-    {% for key,value in listeMot %}  
-        <tr><td>{{ value.id }}</td><td>{{ value.Libelle }}</td>
-            
-            <td>
+    <tr><th>Mots Anglais</th><th>Mots Français </th></tr>  
+    
+    
+    {% for key,value in ListeMot %}
+        
+        <tr><td>{{ value.Libelle }}</td><td>{{ value.Traduction }}</td><
+          
+          
+    <td>
         <a href="{{ path('epsi_premier_modification_mot',{'id':value.id})}}">
             Modifier</a>
     </td>
@@ -19,8 +24,11 @@
      
         </tr>  
     {% endfor %} 
-</table>    
+</table>   
+
  {% else %}   
-     Aucun catégorie à afficher   
+     Aucun mots à afficher   
      {% endif %}  
          {% endblock %}
+         
+         

@@ -3,9 +3,9 @@
 {% block title %} {{ parent() }} - Admin {% endblock %}    
 {% block contenu %}  <br />Liste des thèmes {% if not listeTheme is empty %}
 <table>
-    <tr><th>id</th><th>Libelle</th></tr>   
+    <tr><th>Libelle</th></tr><tr></tr>   
     {% for key,value in listeTheme %}  
-        <tr><td>{{ value.id }}</td><td>{{ value.Libelle }}</td>
+        <tr><td>{{ value.Libelle }}</td>
         <td>
         <a href="{{ path('epsi_premier_modification_theme',{'id':value.id})}}">
             Modifier</a>
