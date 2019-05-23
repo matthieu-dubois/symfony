@@ -1,0 +1,28 @@
+{# empty Twig template #}
+{% extends "EpsiPremierBundle::layout.html.twig" %}
+{% block title %} {{ parent() }} - Admin {% endblock %}    
+{% block contenu %}  <br />Liste des Categories {% if not listeCategorie is empty %}
+<table>
+    <tr><th>Libelle</th></tr>   
+    {% for key,value in listeCategorie %}  
+        <tr>
+            <td>
+                <a href="{{ path('epsi_premier_afficher_categorie',{'id':value.id})}}">
+                 {{ value.Libelle }}</a>
+            
+            </td>
+    <td>
+        <a href="{{ path('epsi_premier_modification_categorie',{'id':value.id})}}">
+            Modifier</a>
+    </td>
+    <td>
+        <a href="{{ path('epsi_premier_suppression_categorie',{'id':value.id})}}">
+            Supprimer</a>
+    </td>
+        </tr>  
+    {% endfor %} 
+</table>    
+ {% else %}   
+     Aucun catégorie à afficher   
+     {% endif %}  
+         {% endblock %} 

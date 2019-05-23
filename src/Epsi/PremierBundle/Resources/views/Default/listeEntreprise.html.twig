@@ -1,0 +1,22 @@
+{# empty Twig template #}
+{% extends "EpsiPremierBundle::layout.html.twig" %}
+{% block title %} {{ parent() }} - Admin {% endblock %}    
+{% block contenu %}  <br />Liste des Entreprises {% if not listeEntreprise is empty %}
+<table>
+    {% for key,value in listeEntreprise %}
+    <tr><th>id</th><td>{{ value.id }}</td></tr><tr><th>Nom</th><td>{{ value.nom }}</td></tr><tr><th>Adresse</th><td>{{ value.adresse }}</td></tr><th>Ville</th><td>{{ value.ville }}</td><tr></tr><th>Code Postal</th><td>{{ value.cp }}</td></tr><tr><th>Numéro Téléphone</th></tr><tr><th>Nom utilisateur</th><td>{{ value.numTel }}</td></tr>   
+       
+            <td><a href="{{ path('epsi_premier_modification_entreprise',{'id':value.id})}}">
+            Modifier</a></td>
+            <td><a href="{{ path('epsi_premier_suppression_entreprise',{'id':value.id})}}">
+            Supprimer</a></td>    
+    
+    
+    
+    
+    
+    {% endfor %}</table>    
+ {% else %}   
+     Aucunes entreprise à afficher   
+     {% endif %}  
+         {% endblock %} 

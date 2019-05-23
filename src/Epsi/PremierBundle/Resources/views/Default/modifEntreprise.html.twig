@@ -1,0 +1,43 @@
+{% extends "EpsiPremierBundle::layout.html.twig" %}
+{% block title %} hello  {% endblock %}
+{% block contenu %}
+  <h3>Modification d'une entreprise</h3>
+  <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 contact-text">
+                    <h3>Changement d'une entreprise</h3>
+                </div>
+                <div class="col-lg-8">
+                    <form name="form" id="form" method="post" class="contact-form">
+                        {{form_start(form)}}
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{ form_row(form.nom) }}
+                            </div>
+                            <div class="col-md-12">
+                                {{ form_row(form.adresse) }}
+                            </div>
+                            <div class="col-md-12">
+                                {{ form_row(form.ville) }}
+                            </div>
+                            <div class="col-md-12">
+                                {{ form_row(form.cp) }}
+                            </div><div class="col-md-12">
+                                {{ form_row(form.numTel) }}
+                            </div>
+                            </div><div class="col-md-12">
+                                {{ form_row(form.utilisateur) }}
+                            </div>
+                            <div class="col-md-12">
+                                {{ form_row(form.Envoyer,{'attr': {'class':'site-btn'}}) }}
+                            </div>
+                                {{ message }}
+                        </div>
+                        {{ form_end(form)}}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{%endblock%}

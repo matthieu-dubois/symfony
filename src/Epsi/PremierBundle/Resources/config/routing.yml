@@ -1,0 +1,70 @@
+epsi_premier_homepage:
+    path:     /
+    defaults: { _controller: EpsiPremierBundle:Default:index }
+    
+    
+epsi_premier_categorie:
+    path:     /categorie
+    defaults: { _controller: EpsiPremierBundle:Categorie:categorie }    
+epsi_premier_liste_categorie:
+    path:     /listeCategorie
+    defaults: { _controller: EpsiPremierBundle:Categorie:view }
+epsi_premier_modification_categorie:
+    path:     /modificationCategorie/{id}
+    defaults: { _controller: EpsiPremierBundle:Categorie:modification}
+epsi_premier_suppression_categorie:
+    path:     /supressionCategorie/{id}
+    defaults: { _controller: EpsiPremierBundle:Categorie:suppression}
+
+
+    
+
+
+epsi_premier_entreprise:
+    path:     /entreprise
+    defaults: { _controller: EpsiPremierBundle:Entreprise:entreprise }
+epsi_premier_liste_entreprise:
+    path:     /listeEntreprise
+    defaults: { _controller: EpsiPremierBundle:Entreprise:view }
+epsi_premier_modification_entreprise:
+    path:     /modificationEntreprise/{id}
+    defaults: { _controller: EpsiPremierBundle:Entreprise:modification}
+epsi_premier_suppression_entreprise:
+    path:     /supressionEntreprise/{id}
+    defaults: { _controller: EpsiPremierBundle:Entreprise:suppression}
+    
+    
+epsi_premier_mot:
+    path:     /mot
+    defaults: { _controller: EpsiPremierBundle:Mot:mot }
+epsi_premier_liste_mot:
+    path:     /listeMot
+    defaults: { _controller: EpsiPremierBundle:Mot:view }
+epsi_premier_modification_mot:
+    path:     /modificationMot/{id}
+    defaults: { _controller: EpsiPremierBundle:Mot:modification}
+epsi_premier_suppression_mot:
+    path:     /supressionMot/{id}
+    defaults: { _controller: EpsiPremierBundle:Mot:suppression}
+epsi_premier_afficher_categorie:
+    path:     /afficherCategorie/{id}
+    defaults: { _controller: EpsiPremierBundle:Mot:AfficherCategorie}
+
+
+
+epsi_premier_theme:
+    path:     /theme
+    defaults: { _controller: EpsiPremierBundle:Theme:theme }
+epsi_premier_liste_theme:
+    path:     /listeTheme
+    defaults: { _controller: EpsiPremierBundle:Theme:view }    
+epsi_premier_modification_theme:
+    path:     /modificationTheme/{id}
+    defaults: { _controller: EpsiPremierBundle:Theme:modification}
+epsi_premier_suppression_theme:
+    path:     /supressionTheme/{id}
+    defaults: { _controller: EpsiPremierBundle:Theme:suppression}
+themes:    
+    type: rest    
+    resource: Epsi\PremierBundle\Controller\ThemeController
+    
